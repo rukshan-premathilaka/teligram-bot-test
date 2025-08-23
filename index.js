@@ -89,9 +89,8 @@ const sendChannelMessage = async () => {
 };
 
 // Send quote every 10 seconds for testing
-setInterval(() => {
-    sendChannelMessage().catch((error) => console.error("Error in sendChannelMessage:", error.message));
-}, 10000);
+const cron = require("node-cron");
+cron.schedule("0 9 * * *", sendChannelMessage, { timezone: "Asia/Kolkata" });
 
 // Start the Express server
 app.listen(port, () => {
