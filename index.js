@@ -60,7 +60,7 @@ const fetchQuote = async () => {
             author: data[0].a
         };
     } catch (error) {
-        console.error("Error fetching quote from ZenQuotes:", error.message);
+        //console.error("Error fetching quote from ZenQuotes:", error.message);
         // Select a random fallback quote
         const randomIndex = Math.floor(Math.random() * fallbackQuotes.length);
         return fallbackQuotes[randomIndex];
